@@ -5,48 +5,47 @@
 package br.edu.ifnmg.tads.TrabalhoJPA.DoMainModel;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
- * @author HERICK
+ * @author Maike Jordan
  */
 @Entity
 public class Telefone implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="idTelefone")
     private Long idTelefone;
     
     @Column(name="numero")
     private int numero;
 
-    public Telefone(Long idTelefone, int numero) {
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name="idPessoa")
+    private Pessoa idPessoa;
+
+    public Telefone(Long idTelefone, int numero, Pessoa idPessoa) {
         this.idTelefone = idTelefone;
         this.numero = numero;
+        this.idPessoa = idPessoa;
     }
-
     
-    public Long getIdTelefone() {
-        return idTelefone;
+    public Telefone() {
+        this.idTelefone = null;
+        this.numero = 0;
+        this.idPessoa = null;
     }
-
-    public void setIdTelefone(Long idTelefone) {
-        this.idTelefone = idTelefone;
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-   
+    
     @Override
     public int hashCode() {
         int hash = 0;

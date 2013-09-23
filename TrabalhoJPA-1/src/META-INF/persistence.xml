@@ -6,6 +6,11 @@
     <class>br.edu.ifnmg.tads.TrabalhoJPA.DoMainModel.Email</class>
     <class>br.edu.ifnmg.tads.TrabalhoJPA.DoMainModel.Endereco</class>
     <class>br.edu.ifnmg.tads.TrabalhoJPA.DoMainModel.Telefone</class>
+    <class>br.edu.ifnmg.tads.TrabalhoJPA.DoMainModel.Curso</class>
+    <class>br.edu.ifnmg.tads.TrabalhoJPA.DoMainModel.Disciplina</class>
+    <class>br.edu.ifnmg.tads.TrabalhoJPA.DoMainModel.TipoRecurso</class>
+    <class>br.edu.ifnmg.tads.TrabalhoJPA.DoMainModel.Recurso</class>
+    <class>br.edu.ifnmg.tads.TrabalhoJPA.DoMainModel.Situacao</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/TrabalhoJPA?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.password" value=""/>

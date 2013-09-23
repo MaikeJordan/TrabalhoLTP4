@@ -28,9 +28,10 @@ public class Email implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="idEmail")
     private Long idEmail;
     
-    @Column(name="nome", length=16)
+    @Column(name="nome", length=22)
     private String nome;
     
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
